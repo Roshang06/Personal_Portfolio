@@ -2,37 +2,52 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectsPage() {
   const projects = [
     {
-      title: "Seema's Cafe",
-      description: "A professional landing page for Seema's cafe located on Lake Sammamish Road.",
-      Link: "https://seema-official-website.vercel.app/",
-      image: '/seema.png',
-      tags: ['Next.js']
+      title: 'UW Photonics',
+      description: 'Interned at the UW Photonics Lab contributing to research in harware accelerated networks for signal equalization.',
+      Link: "/UWPhotonics",
+      image: '/experimental_setup.jpeg',
+      tags: ['SystemVerilog', 'Pytorch']
     },
     {
-      title: 'Resume Builder Web-App',
-      description: 'A prototype web app made with React that guides users through creating a professional resume quickly and easily.',
-      Link: "https://github.com/Roshang06/ResBuilder",
-      image: '/resumeb.png',
-      tags: ['React', 'Firebase']
+      title: 'SPARCS',
+      description: 'Working on circuitry and firmware (C++ Arduino) for a wireless digital stethescope and EKG.',
+      Link: "/SPARCS",
+      image: '/stethoscope_conceptsketches_f.png',
+      tags: ['C++', 'Python', 'Soldering', 'PCB Design']
+    },
+    {
+      title: 'Simple NN inference engine',
+      description: 'Created a lightweight Nueral Network Training and inference class using C++.',
+      Link: "/NNInference",
+      image: '/network.png',
+      tags: ['C++']
+    },
+    {
+      title: "Seema's Cafe",
+      description: "A professional landing page for Seema's cafe located on Lake Sammamish Road.",
+      Link: "/SeemaCafeWebsite",
+      image: '/seema.png',
+      tags: ['Next.js', 'Javascript']
     },
     {
       title: '2D Platformer Game',
       description: 'As part of my role as President of Game Design club in HS, we created a 2D platformer using Unity and C#.',
-      Link: "https://drive.google.com/drive/folders/1jX_HtMIh5nHIQb_WErqFUNEd-DVQSrrF?usp=drive_link",
+      Link: "/GameDesignClub",
       image: '/g.png',
       tags: ['Unity', 'C#']
     },
     {
       title: 'Hobby RC-Car',
-      description: 'An RC-car printed with PLA, with an SG90 servo, 2 brushless motors, and a raspberry pi controlled remotely over Wifi',
-      Link: "https://cad.onshape.com/documents/623744e0a40e4d23a34f392a/w/9060012aedf18c98b4809af4/e/1bb00d9469202f2b5905caed?renderMode=0&uiState=693657e40ed4b1c7e5c38876",
+      description: 'Designed an RC-car printed with PLA, with an SG90 servo, 2 brushless motors, and a raspberry pi controlled remotely over Wifi',
+      Link: "/RCCar",
       image: '/rccar.png',
       tags: ['OnShape', 'Python']
-    }
+    },
   ];
 
   return (
@@ -41,23 +56,19 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto">
 
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div>
           <h1 className="flex justify-center text-5xl md:text-6xl font-bold mb-6 text-white">
-            Projects
+            Experiences
           </h1>
           <p className="flex justify-center text-xl text-gray-400 mb-16">
             Click each card to learn more
           </p>
-        </motion.div>
+        </div>
         
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <a href={project.Link} target="_blank" rel="noopener noreferrer" key={project.title}>
+            <Link href={project.Link} rel="noopener noreferrer" key={project.title}>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +112,7 @@ export default function ProjectsPage() {
                 </div>
               </div>
             </motion.div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

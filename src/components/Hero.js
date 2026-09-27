@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect} from 'react';  
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
     const greeting = ["Hello, I'm Roshan Ganesh.", "Whats up, Roshan Ganesh here.", "Hey, I'm Roshan Ganesh.", "Nice to meet you, I'm Roshan Ganesh.", "Hi there, I'm Roshan Ganesh."];
@@ -38,13 +39,14 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="flex flex-wrap gap-4"
           >
-            <a href="/Projects">
+            <a href="/Experiences">
             <motion.button
+     
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-900 rounded-xl text-white font-medium hover:shadow-lg hover:shadow-gray-900/50 transition-shadow"
+              className="px-8 py-4 bg-gray-800 rounded-xl text-white font-medium hover:bg-gray-700 transition-colors"
             >
-              View Projects
+              View Experiences
             </motion.button>
             </a>
             <a href="/Contact">
@@ -54,7 +56,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gray-800 rounded-xl text-white font-medium hover:bg-gray-700 transition-colors"
             >
-              Contact Me
+              Get in Touch
             </motion.button>
             </a>
           </motion.div>
